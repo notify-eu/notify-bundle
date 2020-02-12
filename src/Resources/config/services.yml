@@ -1,0 +1,28 @@
+parameters:
+  notify:
+    url: '%env(resolve:NOTIFY_URL)%'
+    client_id: '%env(resolve:NOTIFY_CLIENT_ID)%'
+    secret: '%env(resolve:NOTIFY_SECRET)%'
+    transport: '%env(resolve:NOTIFY_TRANSPORT)%'
+
+services:
+  GuzzleHttp\Client:
+    public: true
+    autowire: true
+    autoconfigure: false
+  notify.client:
+    class: NotifyEu\NotifyBundle\Service\NotifyClient
+    autowire: false
+    arguments:
+      - '@GuzzleHttp\Client'
+      - '%notify%'
+    public: false
+  notify.service:
+    class: NotifyEu\NotifyBundle\Service\NotifyService
+    autowire: true
+    arguments:
+      - '@notify.client'
+    public: true
+
+  NotifyEu\NotifyBundle\Service\NotifyService: '@notify.service'
+  NotifyEu\NotifyBundle\Service\NotifyClient: '@notify.client'

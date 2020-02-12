@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/notify-eu/notify-bundle.svg?style=flat-square)](https://packagist.org/packages/notify-eu/notify-bundle)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/notify-eu/notify-bundle/master.svg?style=flat-square)](https://travis-ci.org/notify-eu/notify-bundle)
-[![StyleCI](https://styleci.io/repos/200646016/shield)](https://styleci.io/repos/200646016)
+[![StyleCI](https://styleci.io/repos/239555542/shield)](https://styleci.io/repos/239555542)
 [![Total Downloads](https://img.shields.io/packagist/dt/notify-eu/notify-bundle.svg?style=flat-square)](https://packagist.org/packages/notify-eu/notify-bundle)
 
 This package makes it easy to send notifications using [Notify](https://notify.eu) with Symfony 4

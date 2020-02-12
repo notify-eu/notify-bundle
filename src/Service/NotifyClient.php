@@ -5,14 +5,13 @@ namespace NotifyEu\NotifyBundle\Service;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use NotifyEu\NotifyBundle\Entity\NotifyMessage;
 use NotifyEu\NotifyBundle\Exceptions\CouldNotSendNotification;
 use NotifyEu\NotifyBundle\Exceptions\InvalidConfiguration;
 use NotifyEu\NotifyBundle\Exceptions\InvalidMessageObject;
-use NotifyEu\NotifyBundle\Entity\NotifyMessage;
 
 class NotifyClient
 {
-
     /**
      * @var string
      */
@@ -81,10 +80,9 @@ class NotifyClient
                 'body' => json_encode($message),
             ]);
 
-            if($response) {
+            if ($response) {
                 return json_decode($response->getBody()->getContents(), true);
             }
-
         } catch (ClientException $exception) {
             throw CouldNotSendNotification::serviceRespondedWithAnError($exception);
         } catch (Exception $exception) {
